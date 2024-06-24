@@ -1,0 +1,256 @@
+
+        *{
+            text-decoration: none;
+            margin: 0;            
+            border: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar{
+            background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('assets/klcc.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-position-y: 0px;
+            background-position-x: -10px;
+            background-size: 101%;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .navdiv{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: 150px;
+        }
+
+        .navdiv li{
+            display: inline-block;
+            margin-left: 40px;
+            margin-top: 25px;
+        }
+
+        .navdiv li a{
+            color: white;
+            font-size: 16px;
+        }
+
+        .navdiv ul{
+            margin-right: 90px;
+
+        }
+
+        .logo a img{
+            margin-top: 30px;
+            width: 150px;
+            height: 80px;
+        }
+
+        li{
+            list-style: none;
+            
+        }
+
+        li.selected {
+            background-color: rgba(255, 123, 0, 0.904);
+            padding: 20px;
+        }
+
+
+        .navdiv ul li:last-child a img{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            position: absolute;
+            top: 53px;
+        }
+
+        .pagetitle{
+            font-family: Arial, sans-serif;
+            font-size: 40px;
+            color: white;
+            margin-left: 150px;
+            margin-top: 70px;
+        }
+
+        body{
+            background-color: whitesmoke;
+        }
+
+        .inquiry-title{
+            margin-top: 50px;
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .main{
+            background-color: white;
+            margin-left: 150px;
+            margin-right: 150px;
+            padding: 60px;
+            padding-bottom: 200px;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main h1{
+            margin: 20px auto;
+        }
+
+        .sidebar ul li{
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 16px;
+            margin-right: 50px;
+            margin-top: 5px;
+        }
+
+        .sidebar ul li a{
+            color:  black;
+            transition-duration: 0.3s;
+        }
+
+        .sidebar ul li a:hover{
+            color:  rgba(255, 123, 0, 0.904);
+        }
+
+        .inquiry_list{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .inquiry_list span a{
+            color: white;
+            background-color: green;
+            float: right;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10%;
+        }
+
+        .inquiry_post{
+            width: 80%;
+            margin-top: 2%;
+            border-radius: 20px;
+            border-top: black 0.5px;
+            border-left: black 0.5px;
+            border-style: groove;
+            padding: 30px;
+            box-shadow: 5px 5px 5px gray;
+        }
+
+        .inquiry_post img{
+            width: 8%;
+            height: 8%;
+            border-radius: 50%;
+        }
+
+        .title_post{
+            display: flex;
+        }
+
+        .title{
+            margin-top: -5px;
+            margin-left: 15px;
+            font-weight: bold;
+            font-size: 30px;
+            width: 100%;
+        }
+
+        .title_metadata{
+            margin-top: 20px;
+            margin-left: 5px;
+        }
+
+        .title_metadata span{
+            font-weight: bold;
+        }
+
+        .inquiry_post button{
+            background-color: green;
+            color: white;
+            border: none;
+            margin-top: 25px;
+            width: 50px;
+            height: 25px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .date{
+            margin-left: 5px;
+            font-size: 14px;
+            position: absolute;
+            margin-top: 30px;
+            color: black;
+        }
+
+        .date span{
+            color: gray;
+        }
+
+        .howto-section{
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 100px;
+        }
+
+        .howto-section h1{
+            color: black;
+            text-align: center;
+        }
+
+        .howto-steps{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            text-align: center;
+            gap: 50px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .step-box{
+            background-color: rgb(83, 174, 226);
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .step-box h3{
+            color: white;
+        }
+
+        .step-box div{
+            margin-top: 5px;
+            color: white;
+        }
+
+        .step-box div span{
+            font-weight: bold;
+        }
+
+        .step-box img{
+            margin-top: 10px;
+            margin-bottom: 5px;
+            width: 100px;
+            height: auto;
+        }
+
+        hr{
+            width: 50%;
+            border: 1px solid #000000; 
+            margin: 20px auto;
+        }
+
+        
