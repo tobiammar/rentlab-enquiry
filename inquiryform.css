@@ -85,6 +85,7 @@ body {
 .form-container h2 {
     text-align: center;
     color: white;
+    margin-top: 20px;
 }
 
 hr {
@@ -116,7 +117,7 @@ hr {
 }
 
 .form-group select {
-    width: 100%;
+    width: 97%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -140,12 +141,6 @@ hr {
     width: 480px;
 }
 
-.form-group textarea {
-    height: 100px;
-    resize: none;
-    /* Disable resizing */
-}
-
 .form-group .radio-group {
     display: flex;
     flex-wrap: wrap;
@@ -157,33 +152,10 @@ hr {
     margin-right: 10px;
 }
 
-.form-group button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
-}
-
-.form-group button:hover {
-    background-color: #45a049;
-}
-
 .form-desc {
     margin-top: 20px;
     margin-bottom: 20px;
     color: white;
-}
-
-/* Styling for multi-page form navigation */
-.form-page {
-    display: none;
-}
-
-.form-page.active {
-    display: block;
 }
 
 .form-buttons {
@@ -199,8 +171,4 @@ hr {
     border-radius: 4px;
     cursor: pointer;
     margin-left: 10px;
-}
-
-.form-buttons button:hover {
-    background-color: #45a049;
 }

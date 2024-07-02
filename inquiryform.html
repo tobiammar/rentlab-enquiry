@@ -25,11 +25,13 @@
     </nav>
     <div class="form-container">
         <a class="back-nav" href="index.html">&lt; Back</a>
-        <h2>Property Inquiry Form</h2>
-        <div class="form-desc">Thank you for your interest in our properties. Please fill out the form below with the necessary details about your inquiry. This will help us understand your requirements and assist you better. Kindly provide accurate information to ensure a smooth and efficient process.</div>
+        <h2>Rental Properties Request</h2>
+        <div class="form-desc">Please provide a valid email and contact number to receive property listings that
+            match your requirements, submitted by the property owners or real estate agents.
+        </div>
         <hr>
         <!-- Form Part 1: Contact Information -->
-        <div class="form-page active" id="contact-info">
+        <div class="form-page" id="contact-info">
             <form action="/submit_contact_info" method="post">
                 <div class="form-group">
                     <label for="full-name">Full Name</label>
@@ -43,15 +45,6 @@
                     <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
                 </div>
-                <div class="form-buttons">
-                    <button type="button" onclick="nextFormPage('property-inquiry')">Next</button>
-                </div>
-            </form>
-        </div>
-        
-        <!-- Form Part 2: Property Inquiry -->
-        <div class="form-page" id="property-inquiry">
-            <form action="/submit_property_inquiry" method="post">
                 <div class="form-group">
                     <label for="property-type">Property Type</label>
                     <select id="property-type" name="property_type" required>
@@ -63,22 +56,28 @@
                     </select>
                 </div>
                 <div class="form-group" style="display: flex; flex-direction: column;">
-                    <label for="area">Area</label>
-                    <input type="text" id="area" name="area" placeholder="Enter the area or location" required>
+                    <label for="area">Property / Area / Location</label>
+                    <input type="text" id="area" name="area" placeholder="Enter the preferred property/project name, area or location" required>
                 </div>
                 <div class="form-group">
-                    <label>Floor Area (sq ft)</label>
+                    <label>Size (sq ft)</label>
                     <div class="radio-group">
-                        <label><input type="radio" name="floor_area" value="500-1000" required> 500-1000</label>
-                        <label><input type="radio" name="floor_area" value="1001-1500" required> 1001-1500</label>
-                        <label><input type="radio" name="floor_area" value="1501-2000" required> 1501-2000</label>
-                        <label><input type="radio" name="floor_area" value="2001-2500" required> 2001-2500</label>
-                        <label><input type="radio" name="floor_area" value="2501-3000" required> 2501-3000</label>
-                        <label><input type="radio" name="floor_area" value="3001+" required> 3001+</label>
+                        <label><input type="radio" name="floor_area" value="Below 1000" required>Below 1000</label>
+                        <label><input type="radio" name="floor_area" value="1001 - 2000" required>1001 - 2000</label>
+                        <label><input type="radio" name="floor_area" value="2001 - 3000" required>2001 - 3000</label>
+                        <label><input type="radio" name="floor_area" value="3001 - 5000" required>3001 - 5000</label>
+                        <label><input type="radio" name="floor_area" value="5001 - 7000" required>5001 - 7000</label>
+                        <label><input type="radio" name="floor_area" value="7001 - 10,0000" required>7001 - 10,0000</label>
+                        <label><input type="radio" name="floor_area" value="10,001 & above" required>10,001 & above</label>
+                        <label><input type="radio" name="floor_area" value="25,000 & above" required>25,000 & above</label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="budget">Budget (MYR)</label>
+                    <label for="room-number">Min. number of Bedrooms</label>
+                    <input type="number" id="room-number" name="room-number" placeholder="Enter your Minimum Number of Bedrooms" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="budget">Budget (RM / Month)</label>
                     <input type="number" id="budget" name="budget" placeholder="Enter your budget" required min="0">
                 </div>
                 <div class="form-group">
@@ -91,7 +90,7 @@
                     </select>
                 </div>
                 <div class="form-group-tenure">
-                    <label for="tenure-period">Tenure Period</label>
+                    <label for="tenure-period">Tenancy Period</label>
                     <div>
                         <input type="number" id="tenure-period" name="tenure_period" placeholder="Enter the tenure period" required min="0">
                         <select id="tenure-indicator" name="tenure-indicator" required>
@@ -108,12 +107,7 @@
                     <label for="property-usage">Property Usage:</label>
                     <input type="text" id="property-usage" name="property-usage" placeholder="Enter the property usage" required>
                 </div>
-                <div class="form-group">
-                    <label for="additional-requirements">Additional Requirements</label>
-                    <textarea id="additional-requirements" name="additional_requirements" placeholder="Enter any specific requirements or preferences"></textarea>
-                </div>
                 <div class="form-buttons">
-                    <button type="button" onclick="prevFormPage('contact-info')">Previous</button>
                     <button type="submit">Submit</button>
                 </div>
             </form>
@@ -160,20 +154,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- JavaScript for handling form navigation -->
-    <script>
-        function nextFormPage(nextPageId) {
-            document.getElementById('contact-info').classList.remove('active');
-            document.getElementById('property-inquiry').classList.remove('active');
-            document.getElementById(nextPageId).classList.add('active');
-        }
-
-        function prevFormPage(prevPageId) {
-            document.getElementById('contact-info').classList.remove('active');
-            document.getElementById('property-inquiry').classList.remove('active');
-            document.getElementById(prevPageId).classList.add('active');
-        }
-    </script>
 </body>
 </html>
