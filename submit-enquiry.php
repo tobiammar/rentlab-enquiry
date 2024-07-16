@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die("Connection Failed: " . $conn->connect_error);
 }
 
-$fullname = $email = $phone = $propType = $propArea = $floorArea = $roomNum = $budget = $furnishCond = $tenurePeriod = $moveInDate = $propUse = '';
+$fullname = $email = $phone = $roomNum = $propType = $propArea = $floorArea = $roomNum = $budget = $furnishCond = $tenurePeriod = $moveInDate = $propUse = '';
 
 if (
     isset($_POST['fullname'], $_POST['email'], $_POST['phone'], $_POST['property_type'], $_POST['area'], $_POST['floor_area'],
@@ -32,8 +32,8 @@ if (
     $moveInDate = $_POST['move-in-date'];
     $propUse = $_POST['property-usage'];
 
-    $stmt = $conn->prepare("INSERT INTO tenantEnquiry (fullname, email, phoneNum, propType, propArea, floorArea, furnishCond, moveInDate, tenurePeriod, propUse, budget) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssssssssi", $fullname, $email, $phone, $propType, $propArea, $floorArea, $furnishCond, $moveInDate, $tenurePeriod, $propUse, $budget);
+    $stmt = $conn->prepare("INSERT INTO tenantEnquiry (fullname, email, phoneNum, propType, propArea, floorArea, furnishCond, bedroomNum, moveInDate, tenurePeriod, propUse, budget) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssssisssi", $fullname, $email, $phone, $propType, $propArea, $floorArea, $furnishCond, $roomNum, $moveInDate, $tenurePeriod, $propUse, $budget);
 
     if ($stmt->execute()) {
         header("Location: index.php");

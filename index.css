@@ -123,16 +123,18 @@
         }
 
         .inquiry_list span a{
+            font-weight: bold;
             color: white;
             background-color: green;
             float: right;
-            padding-left: 10px;
-            padding-right: 10px;
-            padding-top: 5px;
-            padding-bottom: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
             cursor: pointer;
             font-size: 16px;
             margin-right: 10%;
+            border-radius: 5px;
         }
 
         .inquiry_post{

@@ -10,10 +10,11 @@
         die("connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT propType,propArea,floorArea,furnishCond,moveInDate,tenurePeriod,propUse,budget,dateAdded from tenantEnquiry ORDER BY id DESC";
+    $sql = "SELECT id,propType,propArea,floorArea,furnishCond,bedroomNum,moveInDate,tenurePeriod,propUse,budget,dateAdded from tenantEnquiry ORDER BY id DESC";
     $result = $conn->query($sql);
 
     $enquiryNumber = $result->num_rows;
+    
 ?>
 
 
@@ -78,7 +79,7 @@
     <div class="main">
         <div class="inquiry_list">
             <span style="font-weight: bold;">Showing <?php echo $enquiryNumber ?> results</span>
-            <span><a href="inquiryform.html">New Request</a></span>
+            <span><a href="inquiryform.html"> + &nbsp; Add Request</a></span>
             <?php
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
@@ -101,7 +102,10 @@
                             </div>
                         </div>
                         <div class="date">Added: <span><?php echo htmlspecialchars($row['dateAdded']); ?></span></div>
-                        <a href="selectproperties.html"><button>Submit Property</button></a>
+                        <form action="selectproperties.php" method="POST">
+                            <input type="hidden" name="id" value="<?php echo htmlspecialchars($row['id']); ?>">
+                            <button type="submit">Submit Property</button>
+                        </form>
                     </div>
                     <?php
                 }
