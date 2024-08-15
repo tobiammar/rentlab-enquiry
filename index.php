@@ -1,4 +1,7 @@
 <?php
+
+    $success = isset($_GET['success']) ? $_GET['success'] : '';
+
     $servername = "127.0.0.1";
     $username = "root";
     $password = "";
@@ -14,7 +17,7 @@
     $result = $conn->query($sql);
 
     $enquiryNumber = $result->num_rows;
-    
+
 ?>
 
 
@@ -50,7 +53,7 @@
             <div class="howto-steps">
                 <div class="step-box">
                     <img src="assets/step-1.png" alt="question">
-                    <h3>Step 1</h3>
+                    <h2>Step 1</h2>
                     <div> 
                         <span>You Desired Property</span> 
                         <br>Let us know the requirements for the ideal rental properties that you are looking for
@@ -58,7 +61,7 @@
                 </div>
                 <div class="step-box">
                     <img src="assets/step-2.png" alt="form">
-                    <h3>Step 2</h3>
+                    <h2>Step 2</h2>
                     <div> 
                         <span>Landlord's Proposals</span> 
                         <br>Landlords & agents submit their properties that meet the requirements listed
@@ -66,7 +69,7 @@
                 </div>
                 <div class="step-box">
                     <img src="assets/step-3.png" alt="">
-                    <h3>Step 3</h3>
+                    <h2>Step 3</h2>
                     <div> 
                         <span>Tenant Offer & Bid</span>
                         <br> Receive proposed properties. Offer and bid for the property that best meet your requirements.
@@ -79,7 +82,7 @@
     <div class="main">
         <div class="inquiry_list">
             <span style="font-weight: bold;">Showing <?php echo $enquiryNumber ?> results</span>
-            <span><a href="inquiryform.html"> + &nbsp; Add Request</a></span>
+            <span><a href="enquiryform.php"> + &nbsp; Add Request</a></span>
             <?php
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
@@ -90,11 +93,11 @@
                             <div class="title"><?php echo htmlspecialchars($row['propType']); ?> @<br><?php echo htmlspecialchars($row['propArea']); ?></div>
                         </div>
                         <div class="title_metadata">
-                            <span>Property type:</span> <?php echo htmlspecialchars($row['propType']); ?><br>
+                            <span>Property Type:</span> <?php echo htmlspecialchars($row['propType']); ?><br>
                             <span>Area:</span> <?php echo htmlspecialchars($row['propArea']); ?><br>
                             <span>Floor Area:</span> <?php echo htmlspecialchars($row['floorArea']); ?> <br>
                             <span>Furnishing Condition:</span> <?php echo htmlspecialchars($row['furnishCond']); ?><br>
-                            <span>Move-in date:</span> <?php echo htmlspecialchars($row['moveInDate']); ?><br>
+                            <span>Move-in Date:</span> <?php echo htmlspecialchars($row['moveInDate']); ?><br>
                             <span>Tenure Period:</span> <?php echo htmlspecialchars($row['tenurePeriod']); ?><br>
                             <span>Property Usage:</span> <?php echo htmlspecialchars($row['propUse']); ?><br>
                             <div class="budget">
@@ -156,6 +159,15 @@
         </div>
     </div>
 </footer>
-
 </body>
+<script>
+        // Function to show a popup message
+        function showSuccess() {
+            var success = "<?php echo $success; ?>";
+            if (success) {
+                alert(success);
+            }
+        }
+        window.onload = showSuccess;
+</script>
 </html>

@@ -62,7 +62,7 @@
                         <span>Move-in Date</span> <?php echo htmlspecialchars($row['moveInDate']); ?> <br>
                         <span>Tenure Period:</span> <?php echo htmlspecialchars($row['tenurePeriod']); ?> <br>
                         <span>Property Usage:</span> <?php echo htmlspecialchars($row['propUse']); ?> <br>
-                        <span>Budget:</span> <?php echo htmlspecialchars($row['budget']); ?> <br>
+                        <span>Budget:</span> RM<?php echo htmlspecialchars($row['budget']); ?> <br>
                         <span>Date added:</span> <?php echo htmlspecialchars($row['dateAdded']); ?>
                         <?php
                             }
